@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams} from "react-router-dom";
+import { useParams,useHistory} from "react-router-dom";
 import { useDispatch,useSelector } from "react-redux";
 import { RemoveSelectedProducts,updateProduct } from "../redux/action/productActions";
 
 export function EditPosts(){
-
+  const history = useHistory()
   const product = useSelector((state) => state.product)
   const {title , body} = product;
   const [form,setForm] = useState({title:title,body:body})
@@ -72,7 +72,7 @@ export function EditPosts(){
                 />
             <br />
           </div>
-          <button type="submit" class="btn btn-primary" >Submit</button>
+          <button type="submit" class="btn btn-primary" onClick={() => history.push('/')}>Update</button>
          </form>
            </div>
             )

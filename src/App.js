@@ -1,5 +1,5 @@
 import './App.css';
-import { Switch,Route } from 'react-router-dom';
+import { Switch,Route,useHistory } from 'react-router-dom';
 import Header from './container/Header'
 import ProductDetails from './container/ProductDetail';
 import { EditPosts } from './container/ProductEdit';
@@ -8,12 +8,13 @@ import AddPosts from './container/AddProduct';
 import ProductComponent from './container/ProductComponent';
 
 function App() {
- 
+  const history = useHistory()
   return (
     <div className="App">
-         <Header />
       <Switch>
       <Route exact path="/">
+         <Header />
+      <button type="submit" class="btn btn-primary" onClick={() => {history.push('/addposts')}}>Add Post</button>
         <ProductComponent />
       <Pagination />
       </Route>

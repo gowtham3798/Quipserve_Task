@@ -43,7 +43,7 @@ export default function ProductDetails(){
              <CardActions className="success-msg-btn">
       </CardActions>
          </Card>
-             <a href="#" onClick={() => history.push('/')} title="Home"><span>Back to Home</span></a>
+             <a href="#" onClick={() => history.push('/')} ><span>Back to Home</span></a>
         </div>
     )
 }

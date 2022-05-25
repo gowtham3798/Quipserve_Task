@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import {addProduct} from "../redux/action/productActions";
 
 
 export default function AddPosts(){
-      
+      const history = useHistory()
     const [form,setForm] = useState({title:'',body:''})
     const [batches,setBatches] = useState([])
 
@@ -61,7 +62,7 @@ dispatch(addProduct([product,...batches]))
                />
            <br />
          </div>
-         <button type="submit" class="btn btn-primary" >Submit</button>
+         <button type="submit" class="btn btn-primary" onClick={() => history.push('/')}>Submit</button>
         </form>
           </div>
       )

@@ -50,7 +50,7 @@ function Movies({title,body,id,deleteButton}){
         <div>
         <div className="movie-container">
          <div className="movie-title">
-            <h2>{title}</h2>
+            <h2><span>{id}</span>.{title}</h2>
           </div>
           <p className="movie-summary">
             {body}
